@@ -14,7 +14,7 @@ $('canvas').matrix({
 ## Requirements
 
 * JQuery
-* tinycolor.js
+* [tinycolor.js](https://github.com/bgrins/TinyColor)
 
 
 ## License
