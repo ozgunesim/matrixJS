@@ -11,6 +11,8 @@ $('canvas').matrix({
 });
 ```
 
+* mouseclick toggles fullscreen.
+
 ## Requirements
 
 * JQuery
