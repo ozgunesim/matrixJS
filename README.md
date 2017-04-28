@@ -7,9 +7,9 @@ matrix style code flow js plugin - HTML5/CANVAS
 
 ```javascript
 $('canvas').matrix({
-  fontSize: '18px',
+  fontSize  : '18px',
   fontFamily: 'matrix',
-  'color' : '#00ad00'
+  'color'   : '#00ad00'
 });
 ```
 
