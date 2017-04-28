@@ -81,7 +81,7 @@
     });
     
 
-    $(canvas).click(function(){
+    $(canvas).bind('click touchstart', function(){
       if(!isFullscreen){
 
         fullscreen($(canvas)[0]);
