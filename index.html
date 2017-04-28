@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/matrix.css">
+	<script src="js/jquery.js" type="text/javascript"></script>
+	<script src="js/tinycolor-min.js" type="text/javascript"></script>
+	<script src="js/matrix.js"></script>
+	<style>
+		@font-face {
+		    font-family: matrix;
+		    src: url('fonts/matrix.ttf');
+		}
+	</style>
+</head>
+<body>
+	<div class="canvas-wrapper">
+		<div class="canvas-container">
+			<canvas width="800" height="600"></canvas>
+		</div>
+	</div>
+	<script>
+		$('canvas').matrix({
+			fontSize: '18px',
+			fontFamily: 'matrix'
+		});
+	</script>
+</body>
+</html>
