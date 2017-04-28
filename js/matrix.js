@@ -1,3 +1,7 @@
+// matrix.js
+// 2017, Özgün EŞİM, https://github.com/ozgunesim/matrixJS
+// Licensed under the MIT license.
+
 (function ( $ ) {
 
 	var canvas, ctx;
@@ -17,8 +21,8 @@
       backgroundColor: "#000000",
       fontSize: "12px",
       fontFamily: "Courier",
-      width: "320",
-      height: "240",
+      width: "800",
+      height: "600",
       fps: 30
     }, options );
 
@@ -33,17 +37,22 @@
 		function init(){
 			stop();
 			ctx = $(canvas)[0].getContext("2d");
-	    //ctx.canvas.style.width ='100%';
-		  //ctx.canvas.style.height='100%';
-		  // ...then set the internal size to match
 
-		  if(!isFullscreen){
-		  	ctx.canvas.width  = settings.width;
-		  	ctx.canvas.height = settings.height;
+		  if(isFullscreen){
+		  	$(canvas).css({
+          'position' : 'absolute'
+        });
+
+        ctx.canvas.width = screen.width; //$(window).width();
+        ctx.canvas.height = screen.height; //$(window).height();
 
 		  }else{
-		  	ctx.canvas.width = screen.width;
-        ctx.canvas.height = screen.height;
+		  	$(canvas).css({
+          'position' : ''
+        });
+
+        ctx.canvas.width = settings.width;
+        ctx.canvas.height = settings.height;
 		  }
 		  
 
@@ -85,28 +94,24 @@
 
     		fullscreen($(canvas)[0]);
 
-    		ctx.canvas.width = $(window).width();
-        ctx.canvas.height = $(window).height();
-
-    		$(canvas).css({
-    			'position' : 'absolute'
-    		});
-
-
-    		isFullscreen = true;
     	}else{
     		
     		exitFullscreen();
-
-    		$(canvas).css({
-    			'position' : ''
-    		});
-
-    		isFullscreen = false;
     	}
 
+    });
 
-    	init();
+    $(canvas).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+      var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+      //var event = state ? 'FullscreenOn' : 'FullscreenOff';
+      if(state){
+        isFullscreen = true;
+
+      }else{
+        isFullscreen = false;
+      }
+      //alert('here!');
+      init(); 
 
     });
 
@@ -122,9 +127,14 @@
 		  } else if(element.msRequestFullscreen) {
 		    element.msRequestFullscreen();
 		  }
+
+      isFullscreen = true;
+
 		}
 
 		function exitFullscreen() {
+      
+
 		  if(document.exitFullscreen) {
 		    document.exitFullscreen();
 		  } else if(document.mozCancelFullScreen) {
@@ -132,6 +142,9 @@
 		  } else if(document.webkitExitFullscreen) {
 		    document.webkitExitFullscreen();
 		  }
+
+      isFullscreen = false;
+      
 		}
 
 

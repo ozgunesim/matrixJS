@@ -15,13 +15,16 @@
 <body>
 	<div class="canvas-wrapper">
 		<div class="canvas-container">
-			<canvas width="800" height="600"></canvas>
+			<canvas></canvas>
+			<div style="text-align: center">click animation to toggle fullscreen</div>
 		</div>
 	</div>
 	<script>
 		$('canvas').matrix({
 			fontSize: '18px',
-			fontFamily: 'matrix'
+			fontFamily: 'matrix',
+			width: 320,
+			height: 240 
 		});
 	</script>
 </body>
