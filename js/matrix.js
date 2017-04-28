@@ -23,7 +23,8 @@
       fontFamily: "Courier",
       width: "800",
       height: "600",
-      fps: 30
+      fps: 30,
+      blockCount: -1
     }, options );
 
 
@@ -43,7 +44,7 @@
         /*$(canvas).css({
           'position' : 'absolute'
         });*/
-        
+
         ctx.canvas.width = screen.width;
         ctx.canvas.height = screen.height;
 
@@ -152,8 +153,9 @@
     function start(){
 
       var colors = tinycolor(settings.color).monochromatic(); //size: 6
-      var blockCount = parseInt((w / size) * (settings.density / 100));
-      for(var i=0; i<blockCount; i++){
+      if(settings.blockCount == -1)
+      settings.blockCount = parseInt((w / size) * (settings.density / 100));
+      for(var i=0; i<settings.blockCount; i++){
         //var x = (Math.floor(i/2) * size) + parseInt(Math.random() * size*3);
         var x = Math.floor(Math.random() * w);
         var y = parseInt(Math.random() * h) - h;
