@@ -1,7 +1,5 @@
 ## matrixJS
-matrix style code flow js plugin - HTML5/CANVAS
-
-
+Simple and lightweight js plugin for matrix style code flow animation. It uses HTML5 Canvas Element.
 
 ## Basic Usage
 
