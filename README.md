@@ -13,6 +13,7 @@ $('canvas').matrix({
   fontSize  : '18px',
   fontFamily: 'matrix',
   color   : '#00ad00',
+  backgroundColor: '#000000',
   width: 320,
   height: 240
 });
