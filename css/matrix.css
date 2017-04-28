@@ -29,3 +29,17 @@ canvas{
 	margin: 0 auto;
 	background-color: green;
 }
+
+.info-box{
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -200px;
+	width: 400px;
+	background: #000;
+	border: 1px solid green;
+	text-align: center;
+	color: #55ff55;
+	padding: 15px;
+	height: auto;
+}

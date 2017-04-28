@@ -40,17 +40,17 @@
       ctx = $(canvas)[0].getContext("2d");
 
       if(isFullscreen){
-        $(canvas).css({
+        /*$(canvas).css({
           'position' : 'absolute'
-        });
-
+        });*/
+        
         ctx.canvas.width = screen.width;
         ctx.canvas.height = screen.height;
 
       }else{
-        $(canvas).css({
+        /*$(canvas).css({
           'position' : ''
-        });
+        });*/
 
         ctx.canvas.width = settings.width;
         ctx.canvas.height = settings.height;
@@ -63,6 +63,7 @@
 
       w = $(canvas).width();
       h = $(canvas).height();
+
       console.log("w :" + w + " , h:" + h);
       size = parseInt(settings.fontSize.replace("px",""));
 
@@ -93,7 +94,11 @@
 
     });
 
-    $(canvas).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+    $(document).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+      fscreenChanged();
+    });
+
+    function fscreenChanged(){
       var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
       //var event = state ? 'FullscreenOn' : 'FullscreenOff';
       if(state){
@@ -103,8 +108,12 @@
         isFullscreen = false;
       }
 
-      init(); 
+      init();
+    }
 
+    $(canvas).resize(function(){
+      init();
+      console.log("resized!");
     });
 
 
