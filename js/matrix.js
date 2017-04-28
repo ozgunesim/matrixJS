@@ -15,7 +15,7 @@
   $.fn.matrix = function( options ) {
 
     var settings = $.extend({
-      //defaults
+      //default values
       density: 100,
       color: "#005900",
       backgroundColor: "#000000",
@@ -44,8 +44,8 @@
           'position' : 'absolute'
         });
 
-        ctx.canvas.width = screen.width; //$(window).width();
-        ctx.canvas.height = screen.height; //$(window).height();
+        ctx.canvas.width = screen.width;
+        ctx.canvas.height = screen.height;
 
       }else{
         $(canvas).css({
@@ -141,8 +141,6 @@
 
 
     function start(){
-      //create blocks
-      //set monochromatic colors
 
       var colors = tinycolor(settings.color).monochromatic(); //size: 6
       var blockCount = parseInt((w / size) * (settings.density / 100));
@@ -185,9 +183,6 @@
     }
 
     function update(){
-      //add new chars to blocks
-      //check overflows
-      //change some chars randomly
 
       for(var i=0; i<blocks.length; i++){
         var block = blocks[i];
