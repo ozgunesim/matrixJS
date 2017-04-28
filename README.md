@@ -8,6 +8,12 @@ Simple and lightweight js plugin for matrix style code flow animation. It uses H
 
 ## Basic Usage
 
+```html
+<script src="js/jquery.js" type="text/javascript"></script>
+<script src="js/tinycolor-min.js" type="text/javascript"></script>
+<script src="js/matrix.js"></script>
+```
+
 ```javascript
 $('canvas').matrix({
   fontSize  : '18px',
