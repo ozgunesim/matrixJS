@@ -12,7 +12,7 @@ Simple and lightweight js plugin for matrix style code flow animation. It uses H
 $('canvas').matrix({
   fontSize  : '18px',
   fontFamily: 'matrix',
-  'color'   : '#00ad00',
+  color   : '#00ad00',
   width: 320,
   height: 240
 });
