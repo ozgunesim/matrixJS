@@ -2,7 +2,7 @@
 
 Simple and lightweight js plugin for matrix style code flow animation. It uses HTML5 Canvas Element.
 
-![matrixJS screenshot](http://i.hizliresim.com/kbQnDA.png)
+![matrixJS screenshot](http://yunus.hacettepe.edu.tr/~ozgun.esim12/img_files/matrix_canvas.png)
 
 ## [DEMO](http://yunus.hacettepe.edu.tr/~ozgun.esim12/matrixJS/)
 
